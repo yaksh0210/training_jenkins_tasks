@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from GitHub repository
-                git url: 'https://github.com/yaksh0210/training_jenkins_tasks.git', branch: 'main'
+                git url: 'https://github.com/nkheria/DevOpsClassCodes.git', branch: 'master'
             }
         }
  
@@ -18,7 +18,7 @@ pipeline {
                 // Build the project using Maven
                 script {
                     withEnv(["PATH+MAVEN=${MAVEN_HOME}\\bin"]) {
-                        sh 'mvn clean package'
+                        bat 'mvn clean package'
                     }
                 }
             }
